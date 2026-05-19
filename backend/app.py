@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_jwt_extended import JWTManager
 from flask_bcrypt import Bcrypt
-
+from route.project import projects_bp
 from config import Config
 from model import db
 from route.auth import auth_bp
@@ -16,7 +16,7 @@ jwt = JWTManager(app)
 bcrypt = Bcrypt(app)
 
 app.register_blueprint(auth_bp, url_prefix='/auth')
-
+app.register_blueprint(projects_bp, url_prefix='/projects')
 @app.route('/')
 def home():
     return "Backend Running Successfully"

@@ -5,7 +5,7 @@ from route.project import projects_bp
 from config import Config
 from model import db
 from route.auth import auth_bp
-
+from route.task import tasks_bp
 app = Flask(__name__)
 
 app.config.from_object(Config)
@@ -17,6 +17,7 @@ bcrypt = Bcrypt(app)
 
 app.register_blueprint(auth_bp, url_prefix='/auth')
 app.register_blueprint(projects_bp, url_prefix='/projects')
+app.register_blueprint(tasks_bp, url_prefix='/tasks')
 @app.route('/')
 def home():
     return "Backend Running Successfully"

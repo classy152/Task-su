@@ -14,8 +14,9 @@ app = Flask(__name__)
 
 app.config.from_object(Config)
 
-db.init_app(app)
+print("DATABASE URL:", app.config.get("SQLALCHEMY_DATABASE_URI"))
 
+db.init_app(app)
 jwt = JWTManager(app)
 bcrypt = Bcrypt(app)
 

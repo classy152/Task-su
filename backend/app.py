@@ -4,7 +4,7 @@ from flask_bcrypt import Bcrypt
 import os
 
 from backend.config import Config
-from backend.models import db
+from backend.model import db
 
 # IMPORT ONLY AUTH FIRST
 from backend.routes.auth import auth_bp

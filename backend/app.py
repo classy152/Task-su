@@ -7,7 +7,7 @@ from backend.config import Config
 from backend.model import db
 
 # IMPORT ONLY AUTH FIRST
-from backend.routes.auth import auth_bp
+# from backend.routes.auth import auth_bp
 
 app = Flask(__name__)
 
@@ -29,7 +29,7 @@ def home():
     return "Backend Running Successfully"
 
 # REGISTER ONLY AUTH FIRST
-app.register_blueprint(auth_bp, url_prefix="/auth")
+# app.register_blueprint(auth_bp, url_prefix="/auth")
 
 # RUN APP
 if __name__ == "__main__":

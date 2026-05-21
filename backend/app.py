@@ -21,8 +21,8 @@ jwt = JWTManager(app)
 bcrypt = Bcrypt(app)
 
 # CREATE TABLES
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#     db.create_all()
 
 app.register_blueprint(auth_bp, url_prefix='/auth')
 app.register_blueprint(projects_bp, url_prefix='/projects')

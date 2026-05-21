@@ -2,8 +2,8 @@ from flask import Flask
 from flask_jwt_extended import JWTManager
 from flask_bcrypt import Bcrypt
 from backend.routes.project import projects_bp
-from config import Config
-from model import db
+from backend.config import Config
+from backend.model import db
 from backend.routes.dashboard import dashboard_bp
 from backend.routes.auth import auth_bp
 from backend.routes.task import tasks_bp

@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-BASE_URL = "http://127.0.0.1:5000"
+BASE_URL = "https://web-production-446327.up.railway.app"
 
 # SESSION STATE
 if "token" not in st.session_state:

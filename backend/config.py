@@ -1,11 +1,18 @@
 import os
 
-db_url = os.getenv("DATABASE_URL")
+class Config:
 
-if db_url.startswith("postgres://"):
-    db_url = db_url.replace("postgres://", "postgresql://", 1)
+    db_url = os.environ.get("DATABASE_URL")
 
-if "sslmode" not in db_url:
-    db_url += "?sslmode=require"
+    if db_url:
 
-app.config["SQLALCHEMY_DATABASE_URI"] = db_url
+        if db_url.startswith("postgres://"):
+            db_url = db_url.replace("postgres://", "postgresql://", 1)
+
+        if "sslmode" not in db_url:
+            db_url += "?sslmode=require"
+
+    SQLALCHEMY_DATABASE_URI = db_url
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY")
